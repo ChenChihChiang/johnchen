@@ -1,4 +1,4 @@
-//@Library('jenkins-shared-library@master') _
+@Library('workflowLibs@master') _
 
 pipeline {
   agent any  
