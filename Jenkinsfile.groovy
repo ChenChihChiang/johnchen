@@ -14,7 +14,7 @@ pipeline {
 		  
             echo "${notify.call('Hello')}"
 	    
-            String loopscript = libraryResource 'loop.sh'
+            def loopscript = libraryResource 'loop.sh'
             sh loopscript
 		  
             def datajson = libraryResource 'data.json'
