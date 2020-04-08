@@ -17,7 +17,7 @@ pipeline {
             //def loopscript = libraryResource 'loop.sh'
             //sh loopscript
 		  
-            def datajson = libraryResource 'external/data.json'
+            def datajson = libraryResource('external/data.json')
 	    echo ${datajson}
           }
         }
