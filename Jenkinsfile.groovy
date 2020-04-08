@@ -11,6 +11,9 @@ pipeline {
 		  
             //def util = new common.utils()
             //echo "${util.getVersion(env.BUILD_NUMBER,env.GIT_COMMIT)}"
+
+            echo "${common.utils.getVersion(env.BUILD_NUMBER,env.GIT_COMMIT)}"
+		  
             echo "${notify.call('Hello')}"
 	    
             def loopscript = libraryResource 'loop.sh'
