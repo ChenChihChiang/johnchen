@@ -13,9 +13,8 @@ pipeline {
             echo "${util.getVersion(env.BUILD_NUMBER,env.GIT_COMMIT)}"
 		  
             echo "${notify.call('Hello')}"
-	    
-            def loopscript = libraryResource('loop.sh')
-            sh loopscript
+		  
+	    sh (libraryResource('loop.sh'))
 		  
             def datajson = libraryResource('data.json')
 	    echo datajson
