@@ -14,11 +14,11 @@ pipeline {
 		  
             echo "${notify.call('Hello')}"
 	    
-            //def loopscript = libraryResource 'loop.sh'
-            //sh loopscript
+            def loopscript = libraryResource 'loop.sh'
+            sh loopscript
 		  
             def datajson = libraryResource('data.json')
-	    echo ${datajson}
+	    echo datajson
           }
         }
       }
