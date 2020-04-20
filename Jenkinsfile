@@ -19,9 +19,9 @@ pipeline {
       }
     }
 
-    stage('') {
+    stage('notification') {
       steps {
-        slackSend(token: 'u8xTxJ0Us1FpZTroSgLctMc6', username: 'john', channel: '#clienttestingenv', message: 'hello')
+        slackSend(token: 'u8xTxJ0Us1FpZTroSgLctMc6', username: 'john', channel: '#clienttestingenv', message: 'hello', teamDomain: 'Grindr')
       }
     }
 
