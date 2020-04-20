@@ -21,7 +21,7 @@ pipeline {
 
     stage('notification') {
       steps {
-        slackSend(token: 'u8xTxJ0Us1FpZTroSgLctMc6', username: 'john', channel: '#clienttestingenv', message: 'hello', teamDomain: 'Grindr')
+        slackSend(token: '123', username: 'john', channel: '#test', message: 'hello', teamDomain: '321')
       }
     }
 
