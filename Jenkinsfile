@@ -6,6 +6,7 @@ pipeline {
         stage('First') {
           steps {
             sh 'echo "First"'
+            input 'go / not go'
           }
         }
 
