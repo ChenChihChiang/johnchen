@@ -2,31 +2,33 @@ pipeline {
   agent any
   stages {
     stage('First') {
-      parallel {
-        stage('First') {
-          steps {
-            sh 'echo "First"'
-            input 'go / not go'
-          }
-        }
-
-        stage('Para') {
-          steps {
-            echo 'para'
-          }
-        }
-
+      steps {
+        sh 'echo "${phase1}"'
       }
     }
 
-    stage('Second') {
+    stage('wait') {
       steps {
-        echo 'Second'
+        input 'go / not go'
+      }
+    }
+
+    stage('final') {
+      steps {
+        sh 'echo "${phase3}"'
+      }
+    }
+
+    stage('') {
+      steps {
+        slackSend(token: 'u8xTxJ0Us1FpZTroSgLctMc6', username: 'john', channel: '#clienttestingenv', message: 'hello')
       }
     }
 
   }
   environment {
-    tag = 'john'
+    phase1 = 'john'
+    phase2 = 'chen'
+    phase3 = 'johnchen'
   }
 }
